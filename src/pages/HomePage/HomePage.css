@@ -1,0 +1,13 @@
+.mainPageText{
+    
+    font-weight: 500;
+    font-size: x-large;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 100px;
+    margin-top: 10px;
+}
+.mainPage{
+  display: flex;
+    flex-direction: row;
+}

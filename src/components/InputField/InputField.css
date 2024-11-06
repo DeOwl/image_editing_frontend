@@ -1,0 +1,15 @@
+.search-bar{
+    width: 100%;
+    font-size: 20px;
+    border-radius: 50px;
+    padding: 10px;
+    border: 1px solid gray;
+    outline: none;
+    font-style: italic;
+
+
+}
+.search-bar-cont{
+    flex:1;
+    padding-right: 20px;
+}
