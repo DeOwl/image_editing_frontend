@@ -9,7 +9,7 @@
   "icons": [
     {
       "src": "/camera_icon.ico",
-      "type": "image/ico", "sizes": "192x192"
+      "type": "image/ico", "sizes": "256x256"
     }
   ]
 }
