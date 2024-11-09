@@ -3,12 +3,10 @@ import { FC, useEffect, useState } from "react";
 import { BreadCrumbs } from "../../components/BreadCrumbs/BreadCrumbs";
 import { ROUTES, ROUTE_LABELS } from "../../Routs";
 import { useParams } from "react-router-dom";
-import { Col, Row, Spinner, Image } from "react-bootstrap";
-//import { ALBUMS_MOCK } from "../../modules/mock";
-import { getFiltersById, getFiltersByTitle } from "../../api";
+import { Spinner } from "react-bootstrap";
+import { getFiltersById } from "../../api";
 import { FILTERS_MOCK } from '../../modules/mock'
 import image_mock from "../../assets/def.jpg"
-import { HeaderMain } from "../../components/NavBar/NavBar";
 
 export interface FilterProp {
   image: string
@@ -40,7 +38,6 @@ export const OneFilterPage: FC = () => {
 
   return (
     <div>
-      <HeaderMain />
       <BreadCrumbs
         crumbs={[
           { label: ROUTE_LABELS.FILTERS, path: ROUTES.FILTERS },

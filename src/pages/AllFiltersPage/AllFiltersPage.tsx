@@ -9,7 +9,8 @@ import { ROUTES, ROUTE_LABELS } from '../../Routs'
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
 import { FiltersProp } from '../../components/AllFiltersCard/AllFiltersCard'
 import { FILTERS_MOCK } from '../../modules/mock'
-import { HeaderMain } from '../../components/NavBar/NavBar'
+import { useSearch, setSearchAction } from '../../slices/filtersSlice'
+import {useDispatch} from "react-redux"
 
 export interface FilterPropWithQueue {
     queue_id: number
@@ -20,7 +21,8 @@ export interface FilterPropWithQueue {
 
 
 const AllFiltersPage: FC = () => {
-    const [searchValue, setSearchValue] = useState('')
+    const dispatch = useDispatch()
+    const search = useSearch()
     const [loading, setLoading] = useState(false)
     const [filters, setFilters] = useState<FiltersProp[]>([])
     const [queueId, setQueueId] = useState(-1)
@@ -38,7 +40,7 @@ const AllFiltersPage: FC = () => {
     const handleSearch = async () =>{
         
         setLoading(true)
-        await getFiltersByTitle(searchValue).then(( response ) => {
+        await getFiltersByTitle(search).then(( response ) => {
             setFilters(response.filters)
             setLoading(false)
             setQueueId(response.queue_id)
@@ -47,7 +49,7 @@ const AllFiltersPage: FC = () => {
             { // В случае ошибки используем mock данные, фильтруем по имени
                 setFilters(
                     FILTERS_MOCK.filter((item) =>{
-                        return item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
+                        return item.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
                     })
                 );
                 setQueueId(-1)
@@ -69,11 +71,10 @@ const AllFiltersPage: FC = () => {
 
     return (
         <div className="main_screen">
-            <HeaderMain/>
             <BreadCrumbs crumbs={[{ label: ROUTE_LABELS.FILTERS }]} />
 
             <div className="search-div">
-                <InputField value={searchValue} setValue={setSearchValue} onSubmit={handleForm.bind(this, handleSearch)}/>
+                <InputField value={search} setValue={(value)=>(dispatch(setSearchAction(value)))} onSubmit={handleForm.bind(this, handleSearch)}/>
 
                 { queueId != -1 && <a className="buttons" href= {"/queue/" + queueId} > Очередь: {queueCount}</a>}
                 { queueId == -1 && <a className="buttonsDisabled" >Очередь</a>}

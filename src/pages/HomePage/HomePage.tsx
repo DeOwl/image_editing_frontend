@@ -1,12 +1,10 @@
 import { FC } from "react";
 import "./HomePage.css"
 import image_mock from "../../assets/logo.png"
-import {HeaderMain} from "../../components/NavBar/NavBar";
+
 
 export const HomePage: FC = () => {
   return (
-    <div>
-      <HeaderMain />
       <div className="mainPage">
         
         <img src={image_mock} style={{height:"400px", marginBottom:"100px"}}/>
@@ -25,6 +23,5 @@ export const HomePage: FC = () => {
         </div>  
         
       </div>
-    </div>
   );
 };

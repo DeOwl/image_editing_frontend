@@ -34,6 +34,7 @@ body{
   justify-content: center;
   align-items: center;
   font-style: italic;
+  cursor: pointer;
   
 }
 
@@ -60,6 +61,7 @@ body{
   align-items: center;
   font-style: italic;
   margin-left: 50px;
+  cursor: pointer;
 }
 
 
