@@ -1,12 +1,11 @@
 {
   "name": "Tile Notes",
   "short_name": "Tile Notes",
-  "start_url": "/image_editing_frontend",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#fdfdfd",
   "theme_color": "#db4938",
   "orientation": "portrait-primary",
-  "id":"/",
   "icons": [
     {
       "src": "/camera_icon.ico",
