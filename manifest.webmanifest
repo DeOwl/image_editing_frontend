@@ -8,7 +8,7 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/camera_icon.ico",
+      "src": "camera_icon.ico",
       "type": "image/svg+xml", "sizes": "256x256"
     }
   ]
