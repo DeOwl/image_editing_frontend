@@ -1,15 +1,15 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { VitePWA, VitePWAOptions } from "vite-plugin-pwa";
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  build: {
-    // generate .vite/manifest.json in outDir
-    manifest: true
-  },
+  base: "/image_editing_frontend",
   server: { 
-    port: 3000,
+    host:"192.168.0.101",
+    port:4173,
+    strictPort:true,
     proxy: {
       "/api": {
         target: "http://localhost:8000",
