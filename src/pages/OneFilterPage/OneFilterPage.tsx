@@ -8,6 +8,7 @@ import { Col, Row, Spinner, Image } from "react-bootstrap";
 import { getFiltersById, getFiltersByTitle } from "../../api";
 import { FILTERS_MOCK } from '../../modules/mock'
 import image_mock from "../../assets/def.jpg"
+import { HeaderMain } from "../../components/NavBar/NavBar";
 
 export interface FilterProp {
   image: string
@@ -39,6 +40,7 @@ export const OneFilterPage: FC = () => {
 
   return (
     <div>
+      <HeaderMain />
       <BreadCrumbs
         crumbs={[
           { label: ROUTE_LABELS.FILTERS, path: ROUTES.FILTERS },

@@ -9,6 +9,7 @@ import { ROUTES, ROUTE_LABELS } from '../../Routs'
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
 import { FiltersProp } from '../../components/AllFiltersCard/AllFiltersCard'
 import { FILTERS_MOCK } from '../../modules/mock'
+import { HeaderMain } from '../../components/NavBar/NavBar'
 
 export interface FilterPropWithQueue {
     queue_id: number
@@ -68,6 +69,7 @@ const AllFiltersPage: FC = () => {
 
     return (
         <div className="main_screen">
+            <HeaderMain/>
             <BreadCrumbs crumbs={[{ label: ROUTE_LABELS.FILTERS }]} />
 
             <div className="search-div">

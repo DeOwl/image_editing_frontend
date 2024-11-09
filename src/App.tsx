@@ -3,15 +3,10 @@ import { HomePage } from "./pages/HomePage/HomePage";
 import AllFiltersPage from "./pages/AllFiltersPage/AllFiltersPage";
 import { ROUTES } from "./Routs";
 import { OneFilterPage } from "./pages/OneFilterPage/OneFilterPage";
+import { useNavigate } from "react-router-dom"
 function App() {
   return (
     <div>
-      <div className="header">
-        <a className="header-text" href="/">Pictura</a>
-        <a href={ROUTES.FILTERS} className="header-href">
-              <div  className="header-button">Фильтры</div>
-        </a>
-      </div>
       <BrowserRouter>
         <Routes>
           <Route path={ROUTES.HOME} index element={<HomePage/>} />
