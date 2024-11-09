@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/image_editing_frontend/sw.js', { scope: '/image_editing_frontend/' })})}
