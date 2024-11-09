@@ -17,7 +17,7 @@ export interface FiltersProp {
     id: number,
 }
 
-const AllFiltersCard: FC<FiltersPropWithHandler> = ({ image, title, description, id, clickHandler }) => (
+const AllFiltersCard: FC<FiltersPropWithHandler> = ({ image, title, description, clickHandler }) => (
     <div className="card">
         <img src={image || image_mock} className="image" />
         <div className="card-contents">

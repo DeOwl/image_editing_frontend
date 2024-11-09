@@ -7,7 +7,7 @@ import {HeaderMain} from "./components/NavBar/NavBar";
 function App() {
   return (
     <div>
-      <BrowserRouter  basename="/image_editing_frontend">
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<HeaderMain/>} >
             <Route path="" index element={<HomePage/>} />

@@ -2,8 +2,9 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import dataReducer from "./slices/filtersSlice"
 
 
-export default configureStore({
+const Store  = configureStore({
     reducer: combineReducers({
         ourData: dataReducer
     })
 })
+export default Store 

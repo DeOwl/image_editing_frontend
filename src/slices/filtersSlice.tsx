@@ -15,7 +15,7 @@ const dataSlice = createSlice({
 })
 
 export const useSearch = () =>
-    useSelector((state) => state.ourData.Search)
+    useSelector((state : any) => state.ourData.Search)
 
 export const {
     setSearch: setSearchAction,
