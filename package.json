@@ -1,8 +1,9 @@
 {
-  "name": "iu5_web",
+  "name": "image_editing_frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://deowl.github.io/image_editing_frontend/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
