@@ -25,7 +25,9 @@
 .search-div{
     display: flex;
     align-items: center;
-    padding-right:30px;
+    padding-right:2%;
+    padding-left:2%;
+    
 }
 
 .buttonsDisabled{ 

@@ -7,7 +7,7 @@ export const HomePage: FC = () => {
   return (
       <div className="mainPage">
         
-        <img src={image_mock} style={{height:"400px", marginBottom:"100px"}}/>
+        <img src={image_mock} className="picturaImage"/>
         <div className="filter-contents">
         <p className="mainPageText">
             Добро пожаловать в Pictura!

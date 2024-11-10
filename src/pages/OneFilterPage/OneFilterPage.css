@@ -1,7 +1,8 @@
 .image_big{
-    width: 500px;
     aspect-ratio: 4/3;
     object-fit: cover;
+    width: 50%;
+    max-width: 787px;
 }
 
 .single_filter_main_div{
@@ -38,3 +39,20 @@
     padding: 15px;
     text-align: center;
   }
+
+@media (max-width: 900px) {
+    .image_big{
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 1000px;
+    }
+    
+    .single_filter_main_div{
+        display: flex;
+    flex-direction: column;
+    margin: 5%;
+    }
+}

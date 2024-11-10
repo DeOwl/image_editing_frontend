@@ -4,10 +4,30 @@
     font-size: x-large;
     text-decoration: none;
     padding-left: 20px;
-    padding-right: 100px;
+    padding-right: 10%;
     margin-top: 10px;
 }
 .mainPage{
   display: flex;
     flex-direction: row;
+}
+
+.picturaImage{
+  object-fit: contain;
+  width: 50%;
+  max-width: 787px;
+}
+@media (max-width: 900px) {
+.mainPage{
+  display: flex;
+    flex-direction: column;
+}
+
+.picturaImage{
+  object-fit: contain;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  max-width: 1000px;
+}
 }

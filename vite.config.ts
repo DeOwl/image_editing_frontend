@@ -12,9 +12,13 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: "http://localhost:8000",
+        target: "http://192.168.0.104:8000",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, "/"),
+      },
+      "/filter-images": {
+        target: "http://192.168.0.104:9000",
+        changeOrigin: true,
       },
     },
   },
