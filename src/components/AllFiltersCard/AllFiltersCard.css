@@ -9,16 +9,7 @@
     
 }
 
-.card-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 20vw)); 
-    justify-content: space-around;
-    gap: 50px;
-    margin-top: 20px;
-    margin-right:2%;
-    margin-left:2%;
 
-}
 
 .card-contents{
     outline: none;

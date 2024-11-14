@@ -2,10 +2,13 @@ import { FilterProp } from "./pages/OneFilterPage/OneFilterPage"
 import { FilterPropWithQueue } from "./pages/AllFiltersPage/AllFiltersPage"
 
 export const getFiltersByTitle = async (title = ''): Promise<FilterPropWithQueue> =>{
-
+    if (title != ""){
     return  fetch(`/api/filters?` + new URLSearchParams({title:title}), {method: "GET", credentials: 'include'})
         .then((response) => response.json());
-    
+    }else{
+        return  fetch(`/api/filters`, {method: "GET", credentials: 'include'})
+        .then((response) => response.json());
+    }
 }
 
 export const getFiltersById = async (id = 0): Promise<FilterProp> =>{

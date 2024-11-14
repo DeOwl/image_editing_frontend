@@ -1,0 +1,37 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Pictura",
+  "version": "0.1.0",
+  "identifier": "com.tauri.build",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "https://192.168.64.30:3000",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": ""
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Pictura",
+        "width": 1920,
+        "height": 1080,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
