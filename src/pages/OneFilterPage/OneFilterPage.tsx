@@ -7,6 +7,7 @@ import { Spinner } from "react-bootstrap";
 import { getFiltersById } from "../../api";
 import { FILTERS_MOCK } from '../../modules/mock'
 import image_mock from "../../assets/def.jpg"
+import { dest_img } from "../../../target_config";
 
 export interface FilterProp {
   image: string
@@ -46,7 +47,7 @@ export const OneFilterPage: FC = () => {
       />
       {pageData ? ( // проверка на наличие данных, иначе загрузка
         <div className="single_filter_main_div">
-          <img src={pageData.image || image_mock} className="image_big"/>
+          <img src={(dest_img + pageData.image) || image_mock} className="image_big"/>
           <div className="filter-contents">
               <p className="title">{pageData.title}</p>
               <p className="short-description">{pageData.description}</p>

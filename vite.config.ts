@@ -4,17 +4,18 @@ import mkcert from'vite-plugin-mkcert'
 import fs from 'fs';
 import path from 'path';
 import {VitePWA} from "vite-plugin-pwa"
+import {api_proxy_addr, img_proxy_addr, dest_root} from "./target_config"
 
 // https://vite.dev/config/
 export default defineConfig({
   clearScreen: false,
-  base:"/image_editing_frontend",
+  base:dest_root,
   plugins: [react(), mkcert(), VitePWA({
     registerType: 'autoUpdate',
     manifest:{
       name: "Pictura",
       short_name: "Pictura",
-      start_url: "/image_editing_frontend",
+      start_url: dest_root,
       display: "standalone",
       background_color: "#fdfdfd",
       theme_color: "#db4938",
@@ -25,8 +26,9 @@ export default defineConfig({
           type: "image/svg+xml", "sizes": "256x256"
         }
       ],
-
-    }})],
+      
+    },
+  })],
   preview:{
     https:{
       key: fs.readFileSync(path.resolve(__dirname, 'cert.key')),
@@ -39,13 +41,14 @@ export default defineConfig({
     port:3000,
     proxy: {
       "/api": {
-        target: "http://192.168.64.254:8000",
+        target: api_proxy_addr,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, "/"),
       },
-      "/filter-images": {
-        target: "http://192.168.64.254:9000",
+      "/img-proxy": {
+        target: img_proxy_addr,
         changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/img-proxy/, "/"),
       },
     },
   },

@@ -3,13 +3,19 @@
   "productName": "Pictura",
   "version": "0.1.0",
   "identifier": "com.tauri.build",
+  "plugins": {
+      "http": {
+        "enabled": true
+      }
+  },
   "build": {
     "frontendDist": "../dist",
-    "devUrl": "https://192.168.64.30:3000",
+    "devUrl": "https://192.168.56.1:3000",
     "beforeDevCommand": "npm run dev",
-    "beforeBuildCommand": ""
+    "beforeBuildCommand": ""  
   },
   "app": {
+    "withGlobalTauri": true,
     "windows": [
       {
         "title": "Pictura",

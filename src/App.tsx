@@ -7,6 +7,7 @@ import {HeaderMain} from "./components/NavBar/NavBar";
 import { useEffect } from "react";
 import { invoke } from "@tauri-apps/api/core";
 import.meta.env.VITE_DEVELOPER_MINDSET;
+import { dest_root } from "../target_config";
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter basename="/image_editing_frontend">
+      <BrowserRouter basename={dest_root}>
         <Routes>
           <Route path="/" element={<HeaderMain/>} >
             <Route path="" index element={<HomePage/>} />
